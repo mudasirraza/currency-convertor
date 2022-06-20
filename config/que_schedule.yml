@@ -1,0 +1,8 @@
+fetch_currency_rates:
+  cron: "* * * * *"
+  class: FetchRatesJob
+
+Que::Scheduler::Jobs::QueSchedulerAuditClearDownJob:
+  cron: "* * * * *"
+  args:
+    retain_row_count: 3

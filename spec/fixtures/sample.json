@@ -1,0 +1,11 @@
+{
+  "timestamp": 1441101909,
+  "source": "USD",
+  "quotes": {
+      "USDAUD": 1.413637,
+      "USDCAD": 1.316495,
+      "USDCHF": 0.96355,
+      "USDEUR": 0.888466,
+      "USDBTC": 0.004322
+  }
+}

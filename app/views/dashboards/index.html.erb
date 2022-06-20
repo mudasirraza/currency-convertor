@@ -1,0 +1,25 @@
+<h3>Currency Convertor</h3>
+
+<%= render partial: 'shared/form_errors', locals: { object: @convertor } %>
+
+<%= form_for @convertor, url: dashboards_path do |f| %>
+  <%= f.label :from_currency, base_currency %>
+  <%= f.text_field :input_number %>
+  <%= f.label :to_currency %>
+  <%= f.select :to_currency, to_currencies  %>
+  <%= f.submit :convert %>
+<% end %>
+
+<% if @convertor.result.present? %>
+  <h3> Result: <%= @convertor.result %> </h3>
+<% end %>
+
+<h3>Currency Graph</h3>
+<%= render partial: 'shared/form_errors', locals: { object: @graph } %>
+<%= form_for @graph, url: dashboards_path do |f| %>
+  <span> EUR to </span>
+  <%= f.select :to_currency, to_currencies %>
+  <%= f.submit :show %>
+<% end %>
+
+<%= line_chart(@graph.result, min: 1.05, max: 1.15) %>
